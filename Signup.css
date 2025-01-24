@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --accent-color: #8672FF;
+  --base-color: white;
+  --text-color: #302d3f;
+  --input-color: #e9e8fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: popins, segoe UI, sans-serif;
+  font-size: 12pt;
+  color: var(--text-color);
+  text-align: center;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(Background.jpg);
+  background-size: cover;
+  background-position: right;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  box-sizing: border-box;
+  background-color: var(--base-color);
+  height: 100vh;
+  width: max(40%, 600px);
+  padding: 10px;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+form {
+  width: min(400px, 100%);
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+form>div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+form label {
+  flex-shrink: 0;
+  height: 50px;
+  width: 50px;
+  background-color: var(--accent-color);
+  fill: white;
+  color: var(--base-color);
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+form input {
+  box-sizing: border-box;
+  flex-grow: 1;
+  min-width: 0;
+  height: 50px;
+  padding: 1em;
+  font: inherit;
+  border-radius: 0 10px 10px 0;
+  border: 2px solid var(--input-color);
+  border-left: none;
+  background-color: var(--input-color);
+  transition: 150ms ease;
+}
+
+form input:hover {
+  border: 2px solid var(--accent-color);
+}
+
+focus input:focus {
+  outline: none;
+  border-color: var(--text-color);
+}
+
+div:has(input:focus)>label {
+  background-color: var(--text-color);
+}
+
+form input::placeholder {
+  color: var(--text-color);
+}
+
+form button {
+
+  margin-top: 10px;
+  border: none;
+  border-radius: 1000px;
+  padding: .85em 4em;
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  font: inherit;
+  font-weight: 600px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: var(--text-color);
+}
+
+form button:focus {
+  outline: none;
+  background-color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Eye div container */
+.password-container {
+  position: relative;
+  width: 100%;
+
+}
+
+
+/* Eye Icon Button */
+#eye-icon {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  background: none;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+
+}
+
+#eye-icon i {
+  width: 0px;
+  font-size: 18px;
+  color: #aaa;
+  transition: color 0.3s;
+}
+
+#eye-icon:hover i {
+  color: #8672FF;
+}
+
+/* Hidden Class */
+div:has(input)div.hidden {
+  display: none;
+}
+
+form div.incorrect label {
+  background-color: #f06272;
+}
+
+form div.incorrect input {
+  border-color: #f06272;
+}
+
+#errro-message {
+  color: #f06272;
+}
+
+@media(max-width: 1100px) {
+  .container {
+    width: min(600px, 100%);
+    border-radius: 0;
+  }
+
+  #eye-icon {
+    top: 50%;
+    right: 60px;
+
+  }
+}
